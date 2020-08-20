@@ -25,7 +25,7 @@ def status_get(ip_port,title,motd):
     server = MinecraftServer.lookup(ip_port)
     status = server.status()
     latency = server.ping()
-    query = server.query()
+    #query = server.query()
     player_p = str(status.players.online)+"/"+str(status.players.max)
     image = image_creator(title,motd,"地址:"+ip_port,player_p,str(int(latency))+"ms")
     img_buffer = io.BytesIO()
