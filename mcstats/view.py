@@ -3,10 +3,7 @@ import mygetter
 
 def hello(request):
     ip  = request.GET.get("ip")
-    if(ip!="mcyyy.co"):
-        return HttpResponse("ERROR IP",)
-    else:
-        title = request.GET.get("title")
-        motd = request.GET.get("motd")
-        image = mygetter.status_get(ip,title,motd)
-        return HttpResponse(image,content_type='image/png')
+    title = request.GET.get("title")
+    motd = request.GET.get("motd")
+    image = mygetter.status_get(ip,title,motd)
+    return HttpResponse(image,content_type='image/png')

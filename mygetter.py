@@ -36,6 +36,4 @@ def status_get(ip_port,title,motd):
     #return image
     
 if __name__ == "__main__":
-    #status_get("mcyyy.co","永凪服务器","开荒|纯净生存|主世界不删档|技能|粘液科技[1.16.1]").show()
-    with open("F:\\pypro\\mcserverget\\website\\mcstats\\a.png",'wb') as f:
-        f.write(status_get("mcyyy.co","永凪服务器","开荒|纯净生存|主世界不删档|技能|粘液科技[1.16.1]"))
+    pass
