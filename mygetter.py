@@ -3,7 +3,7 @@ from PIL import Image, ImageDraw, ImageFont
 import os,sys,base64,io
 
 class Server_Stats:
-    def image_creator(self,title,descr,ip_port,num,ms):
+    def __image_creator(self,title,descr,ip_port,num,ms):
         self.path = os.path.split(os.path.realpath(__file__))[0]
 
         self.bgpath = os.path.join(self.path,"background.png")
@@ -27,7 +27,7 @@ class Server_Stats:
         self.latency = self.server.ping()
         #query = server.query()
         self.player_p = str(self.status.players.online)+"/"+str(self.status.players.max)
-        self.image = self.image_creator(title,motd,"地址:"+ip_port,self.player_p,str(int(self.latency))+"ms")
+        self.image = self.__image_creator(title,motd,"地址:"+ip_port,self.player_p,str(int(self.latency))+"ms")
         self.img_buffer = io.BytesIO()
         self.image.save(self.img_buffer, format='PNG')
         self.byte_data = self.img_buffer.getvalue()
